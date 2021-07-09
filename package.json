@@ -13,7 +13,6 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "dependencies": {
-    "cordova-browser": "^6.0.0",
     "cordova-plugin-console": "git+https://github.com/apache/cordova-plugin-console.git",
     "cordova-plugin-dialogs": "^2.0.2",
     "cordova-plugin-network-information": "git+https://github.com/apache/cordova-plugin-network-information.git",
@@ -27,12 +26,10 @@
       "cordova-plugin-whitelist": {},
       "cordova-plugin-wkwebviewxhrfix": {}
     },
-    "platforms": [
-      "browser"
-    ]
+    "platforms": []
   },
   "devDependencies": {
-    "cordova-ios": "^6.1.1",
+    "cordova-ios": "^6.2.0",
     "cordova-plugin-whitelist": "^1.3.4"
   }
 }

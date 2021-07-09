@@ -1194,6 +1194,7 @@ define([
                 }
                 else {
                     Shared.BeepSuccess();
+                    item.set({ RemainingQuantity: 0 });
                     this.ProcessCurrentPickItem(item)
                 }
             }
@@ -1212,7 +1213,7 @@ define([
             remainingQty -= quantityToScan;
 
 
-           // alert(remainingQty);
+            //alert(remainingQty);
           //  remainingQty = 0; 
 
 
@@ -1237,6 +1238,7 @@ define([
                     this.CurrentItem = item;
                 }
                 else {
+                    this.UpdateCounter(quantityToScan * -1); // deti sandeeep 8/7/2021
                     this.ValidateCompletePick();
                     return true;
                 }
@@ -1252,7 +1254,7 @@ define([
                 if (this.itemCollection.length == 1 && item.get('QuantityToPick') == 1 && maxQty == 1) this.HideSkipButton(item.get('SkippedListItemID'));                
             }            
 
-            this.UpdateCounter(quantityToScan * -1);
+            
             item.set({ OverallCounter: this.model.get("Counter") });
              
            
@@ -2763,7 +2765,8 @@ define([
 
                                 }
                                 else {
-                                      self.GoToLookup(); 
+                                   //self.GoToLookup(); 
+                                     self.LoadPickItems(); // deti sandeep 9/07/2021
                                      isOnItemSettingSection = false;
                                 }
                             }, "Save your work?", "Yes,No");
