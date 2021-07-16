@@ -1193,8 +1193,11 @@ define([
                     this.ProcessPrePackItem(item, quantityToScan);
                 }
                 else {
-                    Shared.BeepSuccess();
-                    this.ProcessCurrentPickItem(item)
+                     // git issue #33 -- changed by sandeep 16 july 2021
+                     if (quantityToScan > 0) {
+                        Shared.BeepSuccess();
+                        this.ProcessCurrentPickItem(item)
+                    }
                 }
             }
             else {
