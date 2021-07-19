@@ -1970,6 +1970,9 @@ define([
                     ShipQuantity: quantityToScan
                 });
                 this.ProcessPrePackItem(item, quantityToScan);
+            } else {
+                // git issue #57 -- changed by sandeep 19 july 2021
+                this.ProcessPickItems(item, quantityToScan);
             }
 
             this.UpdateTotalItemsSkipped(quantityToScan * -1);
